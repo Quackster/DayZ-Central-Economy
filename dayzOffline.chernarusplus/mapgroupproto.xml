@@ -3546,6 +3546,7 @@
   <group name="Land_Village_Pub">
     <usage name="Village" />
     <usage name="Town" />
+    <usage name="Hunting" />
     <container name="lootFloor">
       <category name="tools" />
       <category name="containers" />
