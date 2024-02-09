@@ -4,6 +4,9 @@ void main()
 	Hive ce = CreateHive();
 	if ( ce )
 		ce.InitOffline();
+  
+	// GetCEApi().ExportProxyData("7500 0 7500", 10000);
+	// GetCEApi().ExportClusterData();
 
 	//DATE RESET AFTER ECONOMY INIT-------------------------
 	int year, month, day, hour, minute;
@@ -63,6 +66,9 @@ class CustomMission: MissionServer
 		if ( itemClothing )
 		{
 			SetRandomHealth( itemClothing );
+      
+			itemEnt = itemClothing.GetInventory().CreateInInventory( "SmallStone" );
+			player.SetQuickBarEntityShortcut(itemEnt, 0);
 			
 			itemEnt = itemClothing.GetInventory().CreateInInventory( "BandageDressing" );
 			player.SetQuickBarEntityShortcut(itemEnt, 2);
@@ -89,6 +95,13 @@ class CustomMission: MissionServer
 			SetRandomHealth( itemClothing );
 		
 		itemClothing = player.FindAttachmentBySlotName( "Feet" );
+
+    player.GetStatWater().Add(1000);
+    player.GetStatEnergy().Add(1000);
+  
+//    player.GetStatWater().Add(4400);
+//    player.GetStatEnergy().Add(4400);
+    
 	}
 };
 
